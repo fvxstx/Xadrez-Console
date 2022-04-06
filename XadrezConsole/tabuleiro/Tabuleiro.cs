@@ -10,13 +10,18 @@ namespace tabuleiro
     {
         public int Linhas { get; set; }
         public int Colunas { get; set; }
-        public Peca[,] Pecas;
+        private Peca[,] pecas;
 
         public Tabuleiro(int linhas, int colunas)
         {
             this.Linhas = linhas;
             this.Colunas = colunas;
-            Pecas = new Peca[linhas, colunas];
+            pecas = new Peca[linhas, colunas];
+        }
+
+        public Peca peca(int linha, int coluna)
+        {
+            return pecas[linha, coluna];
         }
     }
 }
