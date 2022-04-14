@@ -17,10 +17,7 @@ namespace XadrezConsole
                     {
                         // Colocando na tela o tabuleiro
                         Console.Clear();
-                        Tela.imprimirTabuleiro(partida.Tab);
-                        Console.WriteLine();
-                        Console.WriteLine($"Turno: {partida.Turno}");
-                        Console.WriteLine($"Aguardando jogada: {partida.JogadorAtual}");
+                        Tela.ImprimirPartida(partida);
 
                         // Pegando a peça que o cara quer
                         Console.WriteLine();
