@@ -19,12 +19,22 @@ namespace XadrezConsole
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine($"Turno: {partida.Turno}");
-            Console.WriteLine($"Aguardando jogada: {partida.JogadorAtual}");
 
-            if (partida.Xeque)
+            if (!partida.Terminada)
             {
-                Console.WriteLine("XEQUE!");
+                Console.WriteLine($"Aguardando jogada: {partida.JogadorAtual}");
+
+                if (partida.Xeque)
+                {
+                    Console.WriteLine("XEQUE!");
+                }
             }
+            else
+            {
+                Console.WriteLine("XEQUEMATE!");
+                Console.WriteLine($"Vencedor: {partida.JogadorAtual}");
+            }
+
         }
 
         public static void ImprimirPecasCapturadas(PartidaDeXadrez partida)
@@ -76,7 +86,7 @@ namespace XadrezConsole
                 for (int j = 0; j < tab.Colunas; j++)
                 {
 
-                    if(posicoesPossiveis[i,j] == true)
+                    if (posicoesPossiveis[i, j] == true)
                     {
                         Console.BackgroundColor = fundoAlterado;
                     }
@@ -92,7 +102,7 @@ namespace XadrezConsole
                 Console.WriteLine();
             }
             Console.WriteLine("  a b c d e f g h");
-            Console.BackgroundColor =fundoOriginal;
+            Console.BackgroundColor = fundoOriginal;
         }
 
         public static PosicaoXadrez LerPosicaoXadrez()
